@@ -2,10 +2,15 @@ import streamlit as st
 import PyPDF2
 import openai
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # -----------------------------
 # AI Setup
 # -----------------------------
-client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # -----------------------------
 # Function: Ask AI
